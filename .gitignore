@@ -1,0 +1,4 @@
+config/database.php
+storage/logs/*.log
+public/assets/uploads/*
+!public/assets/uploads/.htaccess

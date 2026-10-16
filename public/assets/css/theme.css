@@ -1,0 +1,16 @@
+/* Bảng màu: 5 màu chủ đạo (primary, accent, surface, text, border) + 3 màu trạng thái. Font: Inter (nội dung) + Playfair Display (tiêu đề) */
+:root{
+  --c-primary:#111111; --c-on-primary:#ffffff; --c-accent:#b8893c;
+  --c-bg:#ffffff; --c-surface:#f6f5f2; --c-text:#1a1a1a; --c-muted:#6b6b6b; --c-border:#e4e1da;
+  --c-danger:#c0392b; --c-success:#1e8e5a; --c-warning:#b7791f; --c-info:#2b6cb0;
+  --shadow:0 2px 12px rgba(0,0,0,.08); --radius:10px;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-head:'Playfair Display',Georgia,'Times New Roman',serif;
+  color-scheme:light;
+}
+[data-theme="dark"]{
+  --c-primary:#f2efe8; --c-on-primary:#111111; --c-accent:#d4a85a;
+  --c-bg:#0f0f10; --c-surface:#1a1a1c; --c-text:#ececec; --c-muted:#a3a3a3; --c-border:#2d2d30;
+  --c-danger:#ef6b5b; --c-success:#3fc58a; --c-warning:#e0a93b; --c-info:#63a4f0;
+  --shadow:0 2px 12px rgba(0,0,0,.55); color-scheme:dark;
+}

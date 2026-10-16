@@ -1,0 +1,4 @@
+# Cho phép truy cập http://localhost/clothing-store (không cần /public)
+RewriteEngine On
+RewriteRule ^$ public/ [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L]

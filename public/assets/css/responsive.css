@@ -1,0 +1,49 @@
+/* ===== LƯỚI 12 / 8 / 4 CỘT =====
+   Desktop (>=1024px): 12 cột  -> dùng .c-1 ... .c-12
+   Tablet (640-1023px): 8 cột  -> dùng .t-1 ... .t-8
+   Mobile (<640px):     4 cột  -> dùng .m-1 ... .m-4
+   Lưu ý: số cột của lưới KHÁC số sản phẩm trên một hàng.
+   Ví dụ thẻ sản phẩm: c-3 (4 sp/hàng), t-2 (4 sp/hàng), m-2 (2 sp/hàng). */
+.c-1{grid-column:span 1}.c-2{grid-column:span 2}.c-3{grid-column:span 3}.c-4{grid-column:span 4}.c-5{grid-column:span 5}.c-6{grid-column:span 6}
+.c-7{grid-column:span 7}.c-8{grid-column:span 8}.c-9{grid-column:span 9}.c-10{grid-column:span 10}.c-11{grid-column:span 11}.c-12{grid-column:span 12}
+
+@media (min-width:640px) and (max-width:1023px){
+  .grid{grid-template-columns:repeat(8,minmax(0,1fr));gap:16px}
+  .grid>*{grid-column:1/-1}
+  .t-1{grid-column:span 1}.t-2{grid-column:span 2}.t-3{grid-column:span 3}.t-4{grid-column:span 4}
+  .t-5{grid-column:span 5}.t-6{grid-column:span 6}.t-7{grid-column:span 7}.t-8{grid-column:span 8}
+  .main-nav{gap:12px}.search{max-width:200px}
+  .slide-text{padding-left:40px}
+  .slides{aspect-ratio:16/7}
+}
+@media (max-width:1023px){
+  .nav-toggle{display:inline-block}
+  .main-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--c-bg);border-bottom:1px solid var(--c-border);padding:8px 16px;margin:0;max-height:70vh;overflow:auto}
+  .main-nav.open{display:flex}.main-nav a{padding:10px 0;border-bottom:1px solid var(--c-border)}
+  .has-sub .sub{position:static;display:block;border:0;box-shadow:none;padding:0 0 0 14px}
+  .header-actions .has-sub .sub{position:absolute;display:none;border:1px solid var(--c-border);box-shadow:var(--shadow);padding:8px 14px}
+  .header-actions .has-sub:hover .sub,.header-actions .has-sub:focus-within .sub{display:block}
+  .filter-toggle{display:block}.filters{display:none}.filters.open{display:block}
+}
+@media (max-width:639px){
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .grid>*{grid-column:1/-1}
+  .m-1{grid-column:span 1}.m-2{grid-column:span 2}.m-3{grid-column:span 3}.m-4{grid-column:span 4}
+  h1{font-size:1.5rem}h2{font-size:1.25rem}
+  .section{padding:24px 12px}.container{padding:0 12px}
+  .header-main{flex-wrap:wrap;gap:8px;padding-top:8px;padding-bottom:8px}
+  .logo{font-size:1.3rem;margin-right:auto}
+  .search{order:5;max-width:none;flex:1 1 100%;margin:0}
+  .hide-m{display:none}.show-m{display:inline-block}.lang-switch{display:none}
+  .main-nav{top:auto}
+  .slides{aspect-ratio:4/5;min-height:360px;max-height:70vh}
+  .slide-text{padding:0 20px;top:auto;bottom:44px;transform:none}
+  .row2{grid-template-columns:1fr}
+  .toasts{top:auto;bottom:12px;right:12px;left:12px;max-width:none}
+  /* Bảng giỏ hàng/đơn hàng -> dạng thẻ */
+  .cart-table thead{display:none}
+  .cart-table,.cart-table tbody,.cart-table tr,.cart-table td{display:block;width:100%}
+  .cart-table tr{border:1px solid var(--c-border);border-radius:var(--radius);margin-bottom:12px;padding:8px}
+  .cart-table td{display:flex;justify-content:space-between;align-items:center;gap:12px;border:0;padding:6px 4px}
+  .cart-table td::before{content:attr(data-label);color:var(--c-muted);font-size:.8rem}
+}
